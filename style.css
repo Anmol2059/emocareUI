@@ -1,0 +1,147 @@
+/* Import Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* Define colors using variables */
+:root {
+    --pink: #F875AA;
+    --peach: #FFDFDF;
+    --pink-white: #FFF6F6;
+    --sky: #38B6FF;
+}
+
+
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Apply Google Font to the entire document */
+    margin: 0; /* Reset margin */
+    color: #000000;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+/* Navbar styling */
+.navbar {
+    background-color: var(--pink-white); /* Adjust transparency here */
+    backdrop-filter: blur(10px); /* Adjust blur effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adjust shadow */
+    padding: 15px 40px; /* Adjust padding as needed */
+    margin: 20px 80px; /* Adjust margins */
+    border-radius: 15px; /* Adding border radius */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black; /* Adjust color for logo/text */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black /* Adjust color for links */
+}
+.fa-regular{
+    padding-left: 8px;
+    color: var(--pink);
+}
+
+/* CSS for About Us section */
+
+.about-us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    
+}
+
+.content {
+    flex: 1;
+}
+
+.image-card {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card {
+  
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 16px #d1cfcf, inset -8px -8px 16px #ffffff;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img {
+    width: 500px;
+    height: 500px;
+}
+
+
+.detect-emotion-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.detect-emotion-card {
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--pink-white);
+    box-shadow: 5px 5px 15px #d1d1d1, -5px -5px 15px #ffffff;
+}
+
+.upload-label {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: var(--peach);
+    color: var(--pink);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.upload-label:hover {
+    transform: translateY(-3px);
+}
+
+.audio-upload {
+    display: none;
+}
+
+.detect-emotion-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background: var(--sky);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.detect-emotion-button:hover {
+    transform: translateY(-3px);
+}
+
