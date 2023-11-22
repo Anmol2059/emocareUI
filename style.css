@@ -7,7 +7,11 @@
     --peach: #FFDFDF;
     --pink-white: #FFF6F6;
     --sky: #38B6FF;
+    /* Add additional color variables for dark mode */
+    --dark-bg: #1f1f1f;
+    --dark-text: #ffffff;
 }
+
 
 
 
@@ -63,13 +67,13 @@ body {
 }
 
 /* CSS for About Us section */
+/* Keep your existing styles for larger screens */
 
 .about-us {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 40px;
-    
 }
 
 .content {
@@ -83,7 +87,6 @@ body {
 }
 
 .card {
-  
     border-radius: 20px;
     box-shadow: inset 8px 8px 16px #d1cfcf, inset -8px -8px 16px #ffffff;
     overflow: hidden;
@@ -99,12 +102,47 @@ body {
     height: 500px;
 }
 
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .about-us {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center;
+        text-align: center; /* Center-align text content */
+        padding: 20px;
+    }
 
+    .content {
+        order: 2; /* Move content below the image */
+        margin-bottom: 20px; /* Add space between content and image */
+    }
+
+    .image-card {
+        order: 1; /* Place image above content */
+    }
+
+    .card-img {
+        width: 300px; /* Adjust image size for smaller screens */
+        height: 300px;
+    }
+}
+
+/* detect emotion section */
 .detect-emotion-section {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-around;
+    align-items: center; /* Updated to center vertically */
     gap: 20px;
+    margin: 20px; /* Added margin for better spacing */
+}
+
+.emotion-upload-gif-left,
+.upload-section-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 .detect-emotion-card {
@@ -112,6 +150,18 @@ body {
     border-radius: 12px;
     background: var(--pink-white);
     box-shadow: 5px 5px 15px #d1d1d1, -5px -5px 15px #ffffff;
+    width: fit-content; /* Adjust width as needed */
+    margin-bottom: 12px;
+}
+
+.emotion-image {
+    margin-bottom: 10px;
+}
+
+.emotion-image img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
 }
 
 .upload-label {
@@ -121,6 +171,7 @@ body {
     color: var(--pink);
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+    margin-bottom: 10px; /* Added margin */
 }
 
 .upload-label:hover {
@@ -138,18 +189,58 @@ body {
     background: var(--sky);
     color: white;
     cursor: pointer;
+    width: fit-content;
     transition: transform 0.3s ease-in-out;
+    margin-bottom: 10px; /* Added margin */
 }
 
 .detect-emotion-button:hover {
     transform: translateY(-3px);
 }
+
+.emotion-text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--peach);
+    padding-top: 10px;
+    margin-bottom: 10px; /* Added margin */
+}
+
 .centered-hr {
     width: 50%;
     margin: 20px auto;
     border: none;
     border-top: 1px solid var(--pink);
 }
+
+@media screen and (max-width: 768px) {
+    .detect-emotion-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .emotion-upload-gif-left,
+    .upload-section-right {
+        width: 80%;
+    }
+
+    .detect-emotion-card {
+        width: fit-content;
+        padding: 15px;
+    }
+
+    .detect-emotion-button {
+        width: fit-content;
+    }
+
+    .emotion-text,
+    .audio-upload {
+        width: auto;
+        margin: 0;
+    }
+}
+
 
 /* our producs */
 .our-products-section {
@@ -212,7 +303,7 @@ body {
     margin-bottom: 20px;
 }
 
-input[type="text"] {
+.input-search {
     padding: 10px;
     border: none;
     border-radius: 8px;
@@ -228,7 +319,6 @@ button {
     color: white;
     cursor: pointer;
 }
-
 /* footer */
 .footer-section {
     background-color: var(--pink);
@@ -238,6 +328,7 @@ button {
 
 .footer-content {
     display: flex;
+    flex-wrap: wrap; /* Allows content to wrap to the next line */
     justify-content: space-around;
     align-items: flex-start;
     max-width: 1200px;
@@ -245,9 +336,10 @@ button {
 }
 
 .footer-info,
-.footer-links {
-    flex: 1;
-    margin-right: 30px;
+.footer-links,
+.footer-social {
+    flex: 1 1 100%; /* Each div takes full width initially */
+    margin-bottom: 20px; /* Add space between divs */
 }
 
 .footer-links ul {
@@ -300,7 +392,25 @@ button {
     color: var(--pink);
     font-size: 20px;
 }
-/* team */.team-section {
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack divs vertically */
+        align-items: center;
+        padding: 4px;
+    }
+
+    .footer-info,
+    .footer-links,
+    .footer-social {
+        width: 100%; /* Each div takes full width on smaller screens */
+    }
+}
+
+/* team */
+
+.team-section {
   background-color: var(--pink-white);
   padding: 50px 0;
   text-align: center;
@@ -369,3 +479,148 @@ button {
 .member-social a:hover {
   transform: scale(1.2);
 }
+
+/* contact form */
+/* Your existing CSS remains mostly unchanged */
+
+.contact-section {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: var(--pink-white);
+    box-shadow: 8px 8px 16px #e3e3e3, -8px -8px 16px #ffffff;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--pink);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--pink-white);
+    box-shadow: inset 4px 4px 8px #e3e3e3, inset -4px -4px 8px #ffffff;
+}
+
+
+.form-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--sky);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #4da8ff;
+}
+
+
+
+/* Media Queries for form */
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 20px;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 14px;
+    }
+}
+/* respomsive */
+@media screen and (max-width: 768px) {
+    /* Adjust container width */
+    .container {
+      width: 100%;
+      margin: 0;
+    }
+  
+    /* Adjust navbar margins and padding */
+    .navbar {
+      margin: 10px 20px;
+      padding: 10px 20px;
+    }
+  
+    /* Reduce logo size */
+    .logo {
+      font-size: 18px;
+    }
+  
+    /* Adjust navigation link styles */
+    .nav-links li {
+      margin-left: 10px;
+    }
+  
+    .nav-links a {
+      font-size: 14px;
+    }
+  
+    /* Reduce card image size */
+    .card-img {
+      width: 300px;
+      height: 300px;
+    }
+  
+    /* Adjust card padding */
+    .detect-emotion-card {
+      padding: 10px;
+    }
+  
+    /* Adjust upload label padding and font size */
+    .upload-label {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+  
+    /* Adjust section heading and paragraph font sizes */
+    .section-heading {
+      font-size: 20px;
+    }
+  
+    .section-paragraph {
+      font-size: 14px;
+    }
+  
+    /* Adjust search bar input and button sizes */
+    input[type="text"] {
+      width: 120px;
+    }
+  
+    button {
+      padding: 5px;
+    }
+  
+    /* Adjust footer content width */
+    
+  
+    /* Adjust team member card width */
+    .team-member {
+      width: 240px;
+    }
+  
+    /* Adjust avatar image size */
+    .avatar img {
+      width: 100px;
+      height: 100px;
+    }
+    
+  }
+  

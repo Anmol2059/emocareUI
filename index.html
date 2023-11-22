@@ -18,6 +18,7 @@
                     <div style="color: #F875AA; display: inline;">Care</div>
                 </a>
                 
+                
                 <ul class="nav-links">
                     <li><a href="#about">About Us</a></li>
                   
@@ -44,16 +45,31 @@
     </section>
     <hr class="centered-hr">
     <section class="detect-emotion-section">
-        <div class="detect-emotion-card">
-            <label for="audio-upload" class="upload-label">
-                <i class="fas fa-microphone"></i> Upload Your Audio
-            </label>
-            <input type="file" id="audio-upload" class="audio-upload">
+        <div class="emotion-upload-gif-left">
+            <div class="detect-emotion-card">
+                <div class="emotion-image">
+                    <img src="./images/trydemo.gif" alt="Emotion GIF">
+                </div>
+            </div>
         </div>
-        <button class="detect-emotion-button">
-            <i class="fa-solid fa-spinner fa-spin"></i> Detect Emotion
-        </button>
+    
+        <div class="upload-section-right">
+            <div class="detect-emotion-card">
+                <label for="audio-upload" class="upload-label">
+                    <i class="fas fa-microphone"></i> Upload Your Audio
+                </label>
+                <input type="file" id="audio-upload" class="audio-upload">
+            </div>
+            <button class="detect-emotion-button">
+                <i class="fa-solid fa-spinner fa-spin"></i> Detect Emotion
+            </button>
+            <div class="emotion-text" id="emotion-text">
+                <!-- Emotion text will be updated dynamically -->Your emotion will be displayed here.
+            </div>
+        </div>
     </section>
+    
+    
     <hr class="centered-hr">
     
 
@@ -63,28 +79,29 @@
             Explore our range of products designed to enhance mental health solutions.
         </p>
         <div class="search-bar">
-            <input type="text" placeholder="Search...">
+            <input type="text" class="input-search" placeholder="Search...">
             <button><i class="fas fa-search"></i></button>
         </div>
         <div class="products-container">
             <div class="product-cards">
                 <div class="product-card neomorphic-card">
                     <i class="fas fa-hospital fa-shake" style="color: #38B6FF;"></i>
-                    <p>Hospital: Our emotion recognition API can be used in hospitals to monitor mental health.</p>
+                    <p>Hospital 🏥 <br> Our emotion recognition API is a beacon of empathy in healthcare, aiding hospitals and health centers to illuminate mental well-being journeys, nurturing resilient communities.</p>
                 </div>
                 <div class="product-card neomorphic-card">
                     <i class="fas fa-comment-alt fa-shake" style="color: #38B6FF;"></i>
-                    <p>AI Chat Bots: Our mental health API can be used on chat bots for...</p>
+                    <p>AI Bots 🤖 <br> Experience conversational elegance! Our AI bots are the digital companions powering meaningful interactions, fostering engagement in corporate landscapes and diverse institutions.</p>
                 </div>
                 <div class="product-card neomorphic-card">
                     <i class="fas fa-puzzle-piece fa-shake" style="color: #38B6FF;"></i>
-                    <p>Extension: We also have an extension to predict voice message emotion.</p>
+                    <p>Extension 🧩 <br> Dive into the emotion ocean! Our extension effortlessly deciphers voice message emotions, turning communication into a symphony of understanding.</p>
                 </div>
                 <div class="product-card neomorphic-card">
                     <i class="fas fa-cogs fa-shake" style="color: #38B6FF;"></i>
-                    <p>Custom Solutions: Tailored solutions for specific industry needs.</p>
+                    <p>Custom Solutions ⚙️ <br> Unveil bespoke innovation! Our tailored solutions sculpted for unique industries redefine possibility, sculpting the future of technological advancement.</p>
                 </div>
             </div>
+            
         </div>
        
     </section>
@@ -97,7 +114,7 @@
           <div class="team-grid">
             <div class="team-member">
               <div class="avatar">
-                <img src="https://via.placeholder.com/150" alt="Anmol Guragain">
+                <img src="./images/p-anmol.png" alt="Anmol Guragain">
               </div>
               <div class="member-details">
                 <h2>Anmol Guragain</h2>
@@ -127,7 +144,7 @@
             
             <div class="team-member">
               <div class="avatar">
-                <img src="https://via.placeholder.com/150" alt="Sakshi Agarwal">
+                <img src="./images/p-sakshi.png" alt="Sakshi Agarwal">
               </div>
               <div class="member-details">
                 <h2>Sakshi Agarwal</h2>
@@ -151,26 +168,41 @@
 
 
     <!-- Other sections will follow a similar structure -->
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <form action="mailto:anmolguragain@gmail.com" method="post">
+            <div class="form-group">
+                <label for="name">Your Name 🧑🏼‍💼</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email 📩</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="product">Product Inquiry 💼</label>
+                <select id="product" name="product" required>
+                    <option value="product1">Hospital API</option>
+                    <option value="product2">AI Bots</option>
+                    <option value="product3">Chrome Extension</option>
+                    <option value="product4">Custom Solutions</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message 💬</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="form-button">Submit</button>
+        </form>
+    </section>
+    
 
     <footer class="footer-section">
         <div class="footer-content">
-            <div class="footer-info">
-                <h3>Contact Us</h3>
-                <p>Email: anmolguragain@gmail.com</p>
-                <p>Phone: +123 456 789</p>
-                <p>Address: 123 Street, City, Nepal</p>
-            </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
+            
             <div class="footer-social">
-                <h3>Follow Us</h3>
+                <h3>Copyright <i style="color: var(--peach);" class="fa-regular fa-copyright fa-beat"></i> Emo Care</h3>
                 <div class="social-icons">
                     <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
@@ -182,5 +214,6 @@
     </footer>
     
 </body>
+
 
 </html>
