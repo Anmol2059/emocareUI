@@ -56,16 +56,21 @@
         </div>
 
         <div class="upload-section-right">
-            <div class="detect-emotion-card">
-                <label for="audio-upload" class="upload-label">
+            <form id="predictionForm" class="detect-emotion-card">
+                
+                
+                <label for="inputData" class="upload-label">
                     <i class="fas fa-microphone"></i> Upload Your Audio
                 </label>
-                <input type="file" id="audio-upload" class="audio-upload">
-            </div>
-            <button class="detect-emotion-button">
-                <i class="fa-solid fa-spinner fa-spin"></i> Detect Emotion
+                <input type="file" id="inputData" accept="audio/wav" class="audio-upload">
+            <button class="detect-emotion-button" type="submit">
+                <div id="loading" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i> <!-- Add the font awesome spinner class -->
+                </div>
+                <i class="fa-solid"></i> Detect Emotion
             </button>
-            <div class="emotion-text" id="emotion-text">
+        </form>
+            <div class="emotion-text" id="result">
                 <!-- Emotion text will be updated dynamically -->Your emotion will be displayed here.
             </div>
         </div>
@@ -165,13 +170,6 @@
         </div>
     </section>
 
-
-
-
-
-
-
-
     <!-- Other sections will follow a similar structure -->
     <section class="contact-section">
         <h2>Contact Us</h2>
@@ -217,6 +215,28 @@
         </div>
 
     </footer>
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const inputData = document.getElementById('inputData').files[0];
+            console.log(inputData)
+            const formData = new FormData();
+            formData.append('file', inputData);
+            console.log(formData)
+            document.getElementById('result').style.color = "#FFDFDF";
+            document.getElementById('result').innerText =  "Your emotion will be displayed here.";
+            document.getElementById('loading').style.display = 'block';
+
+            const response = await fetch('http://127.0.0.1:5000/predict', {
+                method: 'POST',
+                body:formData
+            });
+            const result = await response.json();
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('result').style.color = 'black'; 
+            document.getElementById('result').innerText =  result;
+        });
+    </script>
 
 </body>
 
